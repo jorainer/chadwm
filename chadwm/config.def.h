@@ -31,11 +31,15 @@ static const int colorfultag        = 1;        /* 0 means use SchemeSel for sel
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
 
-static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11",
-                                        "Material Design Icons Desktop:size=11" };
+/* static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11", */
+/*                                         "Material Design Icons Desktop:size=11" }; */
+static const char *fonts[]          = {"monospace:size=11" ,
+				       "Material Design Icons Desktop:size=11" };
 
 // theme
-#include "themes/onedark.h"
+// #include "themes/onedark.h"
+#include "themes/gruvchad.h"
+// #include "themes/catppuccin.h"
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
@@ -46,10 +50,11 @@ static const char *colors[][3]      = {
     [TabNorm]          = { gray3,   black,  black },
     [SchemeTag]        = { gray3,   black,  black },
     [SchemeTag1]       = { blue,    black,  black },
-    [SchemeTag2]       = { red,     black,  black },
-    [SchemeTag3]       = { orange,  black,  black },
-    [SchemeTag4]       = { green,   black,  black },
-    [SchemeTag5]       = { pink,    black,  black },
+    [SchemeTag2]       = { green,     black,  black },
+    [SchemeTag3]       = { yellow,  black,  black },
+    [SchemeTag4]       = { orange,   black,  black },
+    [SchemeTag5]       = { red,    black,  black },
+    [SchemeTag6]       = { pink,   black,  black},
     [SchemeLayout]     = { green,   black,  black },
     [SchemeBtnPrev]    = { green,   black,  black },
     [SchemeBtnNext]    = { yellow,  black,  black },
@@ -57,17 +62,17 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {"", "", "", "", ""};
+static char *tags[] = {"A", "B", "C", "4", "5", "6"};
 
-static const char* eww[] = { "eww", "open" , "eww", NULL };
+static const char* emcs[] = { "emacs", "~/.config/chadwm/chadwm/config.def.h", NULL }; 
 
 static const Launcher launchers[] = {
     /* command     name to display */
-    { eww,         "" },
+  { emcs,     "conf"}
 };
 
 static const int tagschemes[] = {
-    SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
+  SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5, SchemeTag6
 };
 
 static const unsigned int ulinepad      = 5; /* horizontal padding between the underline and tag */
@@ -83,7 +88,6 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
-    { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
 };
 
 /* layout(s) */
@@ -144,8 +148,8 @@ static Key keys[] = {
     {MODKEY,                            XK_u,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
-    { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
+    { MODKEY,                           XK_x,       spawn,          SHCMD("rofi -show drun") },
+    { MODKEY,                           XK_t,  spawn,            SHCMD("xfce4-terminal")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
@@ -160,11 +164,11 @@ static Key keys[] = {
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
 
     // change m,cfact sizes 
-    { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} },
-    { MODKEY,                           XK_l,       setmfact,       {.f = +0.05} },
-    { MODKEY|ShiftMask,                 XK_h,       setcfact,       {.f = +0.25} },
-    { MODKEY|ShiftMask,                 XK_l,       setcfact,       {.f = -0.25} },
-    { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f =  0.00} },
+    /* { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} }, */
+    /* { MODKEY,                           XK_l,       setmfact,       {.f = +0.05} }, */
+    /* { MODKEY|ShiftMask,                 XK_h,       setcfact,       {.f = +0.25} }, */
+    /* { MODKEY|ShiftMask,                 XK_l,       setcfact,       {.f = -0.25} }, */
+    /* { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f =  0.00} }, */
 
 
     { MODKEY|ShiftMask,                 XK_j,       movestack,      {.i = +1 } },
@@ -197,12 +201,14 @@ static Key keys[] = {
     { MODKEY|ControlMask|ShiftMask,     XK_d,       defaultgaps,    {0} },
 
     // layout
-    { MODKEY,                           XK_t,       setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                           XK_n,       setlayout,      {.v = &layouts[0]} },
     { MODKEY|ShiftMask,                 XK_f,       setlayout,      {.v = &layouts[1]} },
     { MODKEY,                           XK_m,       setlayout,      {.v = &layouts[2]} },
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
     { MODKEY,                           XK_space,   setlayout,      {0} },
+    { MODKEY,                           XK_v,   setlayout,          {.v = &layouts[5]} },
+    { MODKEY,                           XK_h,   setlayout,          {.v = &layouts[6]} },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },
@@ -248,7 +254,7 @@ static Button buttons[] = {
     { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
     { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
     { ClkWinTitle,          0,              Button2,        zoom,           {0} },
-    { ClkStatusText,        0,              Button2,        spawn,          SHCMD("st") },
+    { ClkStatusText,        0,              Button2,        spawn,          SHCMD("xfce4-terminal") },
 
     /* Keep movemouse? */
     /* { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} }, */
