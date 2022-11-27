@@ -39,6 +39,7 @@ static const char *fonts[]          = {"monospace:size=11" ,
 // theme
 // #include "themes/onedark.h"
 #include "themes/gruvchad.h"
+/* #include "themes/flatuil.h" */
 // #include "themes/catppuccin.h"
 
 static const char *colors[][3]      = {
@@ -164,11 +165,11 @@ static Key keys[] = {
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
 
     // change m,cfact sizes 
-    /* { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} }, */
-    /* { MODKEY,                           XK_l,       setmfact,       {.f = +0.05} }, */
-    /* { MODKEY|ShiftMask,                 XK_h,       setcfact,       {.f = +0.25} }, */
-    /* { MODKEY|ShiftMask,                 XK_l,       setcfact,       {.f = -0.25} }, */
-    /* { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f =  0.00} }, */
+    { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} },
+    { MODKEY,                           XK_l,       setmfact,       {.f = +0.05} },
+    { MODKEY|ShiftMask,                 XK_h,       setcfact,       {.f = +0.25} },
+    { MODKEY|ShiftMask,                 XK_l,       setcfact,       {.f = -0.25} },
+    { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f =  0.00} },
 
 
     { MODKEY|ShiftMask,                 XK_j,       movestack,      {.i = +1 } },
@@ -207,8 +208,6 @@ static Key keys[] = {
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
     { MODKEY,                           XK_space,   setlayout,      {0} },
-    { MODKEY,                           XK_v,   setlayout,          {.v = &layouts[5]} },
-    { MODKEY,                           XK_h,   setlayout,          {.v = &layouts[6]} },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },

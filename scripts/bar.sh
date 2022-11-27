@@ -7,6 +7,8 @@ interval=0
 
 # load colors
 . ~/.config/chadwm/scripts/bar_themes/gruvchad
+# . ~/.config/chadwm/scripts/bar_themes/flatuil
+#. ~/.config/chadwm/scripts/bar_themes/nord
 # . ~/.config/chadwm/scripts/bar_themes/catppuccin
 
 cpu() {
