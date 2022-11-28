@@ -6,9 +6,9 @@ xrdb merge ~/.Xresources
 # xset r rate 200 50 &
 xfsettingsd &
 xmodmap ~/.xmodmap
-/home/jo/bin/wallpaperd &
+~/bin/wallpaperd &
 emacs --daemon
-/home/jo/bin/startredshift &
+~/bin/startredshift &
 picom &
 
 ~/.config/chadwm/scripts/bar.sh &

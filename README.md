@@ -1,5 +1,17 @@
 # chadwm (Initial look)
 
+**NOTE**: this is a fork of the *official* `chadwm` DWM fork at
+[siduck/chadwm](https://github.com/siduck/chadwm). The main differences:
+
+- No eww
+- 6 tags (workspaces) instead of 4
+- Some keyboard shortcuts modified
+- Uses `xfce4-terminal` instead of `st` as terminal emulator
+- Starts xfce4 daemon at startup to enable screensaver/lock screen.
+- Uses `wallpaperd` to allow different screen backgrounds for each desktop
+  (tag).
+
+
 <img src="https://github.com/siduck/chadwm/blob/screenshots/screenshots/initial_look.png">
 <img src="https://github.com/siduck/chadwm/blob/screenshots/screenshots/col_layout.png">
 
@@ -28,19 +40,30 @@ https://user-images.githubusercontent.com/59060246/128050994-17f46934-6604-4430-
 - Make sure to setup your terminal's theme accordingly do chadwm's theme such as nord, onedark etc...
 
 ## Other requirements
+
 - picom
 - feh
+- wallpaperd
 - acpi
 - rofi
 
 # Install
 
 ```
-git clone https://github.com/siduck/chadwm --depth 1  ~/.config/chadwm
+git clone https://github.com/jorainer/chadwm --depth 1  ~/.config/chadwm
 cd ~/.config/chadwm/
-mv eww ~/.config
 sudo make install
 ```
+
+
+# Configuration
+
+- `.config/chadwm/chadwm/config.def.h`: edit and change settings such as colors,
+  theme and shortcuts for DWM in this file. Note that after any changes to this
+  file the code needs to be recompiled and installed with `sudo make clean
+  install`.
+- `.config/chadwm/scripts/run.sh`: edit this shell script to add/remove things
+  that should be executed at startup.
 
 # Run chadwm
 
