@@ -3,7 +3,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int default_border = 0;   /* to switch back to default border after dynamic border resizing via keybinds */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
@@ -44,22 +44,22 @@ static const char *fonts[]          = {"monospace:size=11" ,
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
-    [SchemeNorm]       = { gray3,   black,  gray2 },
-    [SchemeSel]        = { gray4,   blue,   blue  },
-    [SchemeTitle]      = { white,   black,  black  }, // active window title
-    [TabSel]           = { blue,    gray2,  black },
-    [TabNorm]          = { gray3,   black,  black },
-    [SchemeTag]        = { gray3,   black,  black },
-    [SchemeTag1]       = { blue,    black,  black },
-    [SchemeTag2]       = { green,     black,  black },
-    [SchemeTag3]       = { yellow,  black,  black },
-    [SchemeTag4]       = { orange,   black,  black },
-    [SchemeTag5]       = { red,    black,  black },
-    [SchemeTag6]       = { pink,   black,  black},
-    [SchemeLayout]     = { green,   black,  black },
-    [SchemeBtnPrev]    = { green,   black,  black },
-    [SchemeBtnNext]    = { yellow,  black,  black },
-    [SchemeBtnClose]   = { red,     black,  black },
+  [SchemeNorm]       = { gray3,   black,  gray2 },  // gray3 black gray2
+  [SchemeSel]        = { gray4,   blue,   blue  },  // selected active windo
+  [SchemeTitle]      = { white,   black,  black  }, // active window title
+  [TabSel]           = { blue,    gray2,  black },
+  [TabNorm]          = { gray3,   black,  black },
+  [SchemeTag]        = { gray3,   black,  black },
+  [SchemeTag1]       = { blue,    black,  black },
+  [SchemeTag2]       = { green,     black,  black },
+  [SchemeTag3]       = { yellow,  black,  black },
+  [SchemeTag4]       = { orange,   black,  black },
+  [SchemeTag5]       = { red,    black,  black },
+  [SchemeTag6]       = { pink,   black,  black},
+  [SchemeLayout]     = { green,   black,  black },
+  [SchemeBtnPrev]    = { green,   black,  black },
+  [SchemeBtnNext]    = { yellow,  black,  black },
+  [SchemeBtnClose]   = { red,     black,  black },
 };
 
 /* tagging */
