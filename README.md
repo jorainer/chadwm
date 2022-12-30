@@ -90,9 +90,7 @@ alias chadwm='startx ~/.config/chadwm/scripts/run.sh'
 - Create a desktop entry (make sure to change `user` with your user):
 
 ```shell
-sudo touch /usr/share/xsessions/chadwm.desktop  
-```
-
+sudo touch /usr/share/xsessions/chadwm.
 ```
 [Desktop Entry]
 Name=chadwm
