@@ -75,7 +75,7 @@ static const char* emcs[] = { "emacs", "~/.config/chadwm/chadwm/config.def.h", N
 
 static const Launcher launchers[] = {
     /* command     name to display */
-  { emacs,     "conf"}
+  { emcs,     "conf"}
 };
 
 static const int tagschemes[] = {
