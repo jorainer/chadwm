@@ -28,11 +28,8 @@
 
 # Tag preview (while hovering tag icon)
 
+https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-bc9d-07247a0486a8.mp4
 
-
-https://user-images.githubusercontent.com/59060246/220520443-2c0605e9-19f2-46e4-8445-d367583c9e1d.mp4
-
- 
 # Requirements
 
 - dash (shell)
@@ -163,3 +160,4 @@ eww open eww
 - notitle
 - winicon
 - [preserveonrestart](https://github.com/PhyTech-R0/dwm-phyOS/blob/master/patches/dwm-6.3-patches/dwm-preserveonrestart-6.3.diff). This patch doesnt let all windows mix up into tag 1 after restarting dwm.
+- shiftview
