@@ -3,8 +3,8 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
-static const unsigned int default_border = 0;   /* to switch back to default border after dynamic border resizing via keybinds */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int default_border = 2;   /* to switch back to default border after dynamic border resizing via keybinds */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -39,8 +39,8 @@ static const int new_window_attach_on_end = 0; /*  1 means the new window will a
 
 /* static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11", */
 /*                                         "Material Design Icons Desktop:size=11" }; */
-static const char *fonts[]          = {"monospace:size=11" ,
-				       "Material Design Icons Desktop:size=11" };
+static const char *fonts[]          = {"monospace:size=10" ,
+				       "Material Design Icons Desktop:size=10" };
 
 // theme
 // #include "themes/onedark.h"
@@ -50,8 +50,8 @@ static const char *fonts[]          = {"monospace:size=11" ,
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
-  [SchemeNorm]       = { gray3,   black,  gray2 },  // gray3 black gray2
-  [SchemeSel]        = { gray4,   blue,   blue  },  // selected active windo
+  [SchemeNorm]       = { gray3,   black,  gray3 },  // gray3 black gray2
+  [SchemeSel]        = { gray4,   blue,   gray2  },  // selected active windo
   [SchemeTitle]      = { white,   black,  black  }, // active window title
   [TabSel]           = { blue,    gray2,  black },
   [TabNorm]          = { gray3,   black,  black },
@@ -71,11 +71,12 @@ static const char *colors[][3]      = {
 /* tagging */
 static char *tags[] = {"A", "B", "C", "4", "5", "6"};
 
-static const char* emcs[] = { "emacs", "~/.config/chadwm/chadwm/config.def.h", NULL }; 
+/* static const char* emcs[] = { "emacs", "~/.config/chadwm/chadwm/config.def.h", NULL };  */
 
 static const Launcher launchers[] = {
     /* command     name to display */
-  { emcs,     "conf"}
+  /* { emcs,     "conf"} */
+  {}
 };
 
 static const int tagschemes[] = {
