@@ -5,10 +5,12 @@ xrdb merge ~/.Xresources
 # feh --bg-fill ~/Pictures/wall/gruv.png &
 # xset r rate 200 50 &
 xfsettingsd &
-xmodmap ~/.xmodmap
+# xmodmap ~/.xmodmap
 ~/bin/wallpaperd &
 emacs --daemon
 ~/bin/startredshift &
+/usr/bin/xfce4-screensaver &
+# picom --experimental-backends &
 picom &
 
 ~/.config/chadwm/scripts/bar.sh &
