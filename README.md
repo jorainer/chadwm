@@ -53,6 +53,7 @@ git clone https://github.com/jorainer/chadwm --depth 1  ~/.config/chadwm
 cd ~/.config/chadwm/
 sudo make install
 ```
+(Note: chmod +x all of the scripts)
 
 
 # Configuration

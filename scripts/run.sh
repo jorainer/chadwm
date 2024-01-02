@@ -13,5 +13,5 @@ emacs --daemon
 # picom --experimental-backends &
 picom &
 
-~/.config/chadwm/scripts/bar.sh &
-while type dwm >/dev/null; do dwm && continue || break; done
+dash ~/.config/chadwm/scripts/bar.sh &
+while type chadwm >/dev/null; do chadwm && continue || break; done
